@@ -16,12 +16,22 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
    */
 }
 
-function validateInput(testInput) {
-   
-}
-
+function validateInput(testInput) { 
+    //retreive values that need to be evaluated
+ 
+    if (pilotName.value === "" || coPilotName.value === "" || fuelLevel === "" || cargoMass === "") {
+        alert("Empty") };
+    if ((isNaN(fuelLevel.value)) || (isNaN(cargoMass.value))) {
+        alert("Not a Number")
+    } else {
+        alert("Is a Number")                            
+    };
+};
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
    
+    //console.log(1. Pilot ${pilotName} is ready for launch)
+    //console.log(input.value)to update a value
+    //validateInput()
 }
 
 async function myFetch() {
