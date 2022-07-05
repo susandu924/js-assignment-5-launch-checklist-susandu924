@@ -29,7 +29,7 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if ((validateInput(pilotName)) === "Empty")
-        alert("All fields must be filled in");
+        alert("All fields must be filled in");//do these need to be window.alert("All fields must be filled in")
     if ((validateInput(copilotName)) === "Empty")
         alert("All fields must be filled in");
     if ((validateInput(fuelLevel)) === "Empty")
@@ -47,7 +47,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         copilotName.value = ""
         fuelLevel.value = ""
         cargoMass.value = ""
-        
+        //console.log(1. Pilot ${pilotName} is ready for launch) update the li elements pilotStatus and copilotStatus to include their names
     if ()
 
 
@@ -55,7 +55,7 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     //if validateInput passes, update values?
 
      //let? pilotName.value ?
-    //console.log(1. Pilot ${pilotName} is ready for launch)
+    
     //console.log(input.value)to update a value
     //validateInput()
     //faultyItems update
