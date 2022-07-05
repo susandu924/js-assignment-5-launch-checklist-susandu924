@@ -29,28 +29,40 @@ function validateInput(testInput) {
 
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     if ((validateInput(pilotName)) === "Empty")
-        alert("All fields must be filled in");//do these need to be window.alert("All fields must be filled in")
+        alert("All fields are required!");//do these need to be window.alert("All fields must be filled in")
     if ((validateInput(copilotName)) === "Empty")
-        alert("All fields must be filled in");
+        alert("All fields are required!");
     if ((validateInput(fuelLevel)) === "Empty")
-        alert("All fields must be filled in");
+        alert("All fields are required!");
     if ((validateInput(cargoMass)) === "Empty")
-        alert("All fields must be filled in");
+        alert("All fields are required!");
     if ((validateInput(NaN(fuelLevel))) === "Not a number")
-        alert("Input must be a number");
+        alert("Make sure to enter valid information for each field!");
         else if ((validateInput(fuelLevel)) === "Is a number")
     if ((validateInput(NaN(cargoMass))) === "Not a number")
-        alert("Input must be a number");
+        alert("Make sure to enter valid information for each field!");
         else ((validateInput(cargoMass)) === "Is a number")
     //else if everything correct, update all the above
-        pilotName.value = "";
+        list.pilotStatus = pilotName.value
         copilotName.value = ""
         fuelLevel.value = ""
         cargoMass.value = ""
-        //console.log(1. Pilot ${pilotName} is ready for launch) update the li elements pilotStatus and copilotStatus to include their names
-    if ()
+        //console.log(1. Pilot ${pilotStatus} is ready for launch) update the li elements pilotStatus and copilotStatus to include their names
+    if (fuelLevel < 10000 ) { //this needs to be 10,000 liters, do i use liters? is 10000 a string, i cant remember
+       launchStatus = "Shuttle Not Ready For Launch"
+        //<h2> = "red" i know this is totaly wrong but this is what i need to do i just dont know how?
 
+    }
+    if (cargoMass > 10000) {
+        launchStatus = "Shuttle Not Ready For Launch"
+        color = "red"
+    }
+    //how do we determine it is ready? all fields filled in, numbers correct. if ????
+    //if shuttle is ready, change launchStatus text to "Shuttle Is Ready To Launch"
+    //color = "green"
 
+    //launchStatus
+    //faultyItems
     //if the form.addEventListener hears submit, the function routes to formSubmission which calls validateInput 
     //if validateInput passes, update values?
 
