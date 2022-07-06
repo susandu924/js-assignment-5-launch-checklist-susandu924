@@ -20,63 +20,44 @@ function validateInput(testInput) {
     //retreive values that need to be evaluated
     if (testInput === ""){
         return "Empty"
-    }
+    };
     if (isNaN(testInput)) {
         return "Not a number"
     } else {
         return  "Is a Number"                            
     };
-
+};
 function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
-    if ((validateInput(pilotName)) === "Empty")
-        alert("All fields are required!");//do these need to be window.alert("All fields must be filled in")
-    if ((validateInput(copilotName)) === "Empty")
-        alert("All fields are required!");
-    if ((validateInput(fuelLevel)) === "Empty")
-        alert("All fields are required!");
-    if ((validateInput(cargoMass)) === "Empty")
-        alert("All fields are required!");
-    if ((validateInput(NaN(fuelLevel))) === "Not a number")
-        alert("Make sure to enter valid information for each field!");
-        else if ((validateInput(fuelLevel)) === "Is a number")
-    if ((validateInput(NaN(cargoMass))) === "Not a number")
-        alert("Make sure to enter valid information for each field!");
-        else ((validateInput(cargoMass)) === "Is a number")
-    //else if everything correct, update all the above
-        list.pilotStatus = pilotName.value
-        copilotName.value = ""
-        fuelLevel.value = ""
-        cargoMass.value = ""
-        //console.log(1. Pilot ${pilotStatus} is ready for launch) update the li elements pilotStatus and copilotStatus to include their names
-    if (fuelLevel < 10000 ) { //this needs to be 10,000 liters, do i use liters? is 10000 a string, i cant remember
-       launchStatus = "Shuttle Not Ready For Launch"
-        //<h2> = "red" i know this is totaly wrong but this is what i need to do i just dont know how?
-
+    if ((validateInput(pilot)) === "Empty" || (validateInput(copilot)) === "Empty" || (validateInput(fuelLevel)) === "Empty" ||
+    (validateInput(cargoLevel)) === "Empty") {
+        alert("All fields are required!")
+        pilot.innerHTML = ("Pilot ${pilot} is ready for launch")
+        copilot.innerHTML = "Co-Pilot ${copilot} is ready for launch"
+    } if 
+    (fuelLevel < 10000) {
+        launchStatus.innerHTML = "Shuttle Not Ready For Launch"
+        fuelStatus.innerHTML = "Fuel level too low for launch"
+        console.log(launchStatus.innerHTML)
+        launchStatus.style.color = "red"
+        list.style.visibility = "visible"
+    } if (cargoLevel > 10000) {
+        launchStatus.innerHTML = "Shuttle Not Ready For Launch"
+        cargoStatus.innerHTML = "Cargo mass too high for launch"
+        launchStatus.style.color = "red"
+        list.style.visibility = "visible"
+    } if ((fuelLevel > 10000) && (cargoLevel < 10000)) {
+        launchStatus.innerHTML = "Shuttle Is Ready For Launch"
+        launchStatus.style.color = "green"
+        fuelStatus.innerHTML = "Fuel level high enough for launch"
+        cargoStatus.innerHTML = "Cargo mass low enough for launch"
     }
-    if (cargoMass > 10000) {
-        launchStatus = "Shuttle Not Ready For Launch"
-        color = "red"
-    }
-    //how do we determine it is ready? all fields filled in, numbers correct. if ????
-    //if shuttle is ready, change launchStatus text to "Shuttle Is Ready To Launch"
-    //color = "green"
+        {
+        pilotStatus.innerHTML = ("Pilot ${pilot} is ready for launch")
+        copilotStatus.innerHTML = "Co-Pilot ${copilot} is ready for launch"
+        
+    };      
+};
 
-    //launchStatus
-    //faultyItems
-    //if the form.addEventListener hears submit, the function routes to formSubmission which calls validateInput 
-    //if validateInput passes, update values?
-
-     //let? pilotName.value ?
-    
-    //console.log(input.value)to update a value
-    //validateInput()
-    //faultyItems update
-    //pilotStatus update using template literals to include pilot name
-    //copilotStatus same 
-    //fuelStatus
-    //cargoStatus
-
-}
 
 async function myFetch() {
     let planetsReturned;
