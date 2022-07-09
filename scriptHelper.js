@@ -17,7 +17,6 @@ function addDestinationInfo(document, name, diameter, star, distance, moons, ima
 }
 
 function validateInput(testInput) { 
-    //retreive values that need to be evaluated
     if (testInput === ""){
         return "Empty"
     };
@@ -37,7 +36,6 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         fuelStatus.innerHTML = "Fuel level too low for launch"
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
         copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready for launch`
-        console.log(launchStatus.innerHTML)
         launchStatus.style.color = "red"
         list.style.visibility = "visible"
     } if (cargoLevel > 10000) {
@@ -53,26 +51,24 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
         copilotStatus.innerHTML = `Co-Pilot ${copilot} is ready for launch`
         fuelStatus.innerHTML = "Fuel level high enough for launch"
-        cargoStatus.innerHTML = "Cargo mass low enough for launch"
-        
-    }
-        {
-        
-        
-    };      
+        cargoStatus.innerHTML = "Cargo mass low enough for launch"     
+    }        
 };
 
-
 async function myFetch() {
-    let planetsReturned;
+  let planetsReturned;
 
-    planetsReturned = await fetch().then( function(response) {
-        });
-
-    return planetsReturned;
-}
+    planetsReturned = await fetch(https://handlers.education.launchcode.org/static/planets.json).then(function(response) {
+        response.json().then(function(json) {
+            return planetsReturned;
+        })  
+})      
+};
 
 function pickPlanet(planets) {
+    //takes in one arguement: a list of planets return one planet from the list with a randomly selected index
+    
+    //Math.random() myFetch.planetsReturned
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
