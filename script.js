@@ -4,15 +4,25 @@ window.addEventListener("load", function() {
     
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = myFetch()
-//    listedPlanetsResponse.then(function (result) {
-//        listedPlanets = result;
-//        console.log(listedPlanets);
-//    }).then(function () {
-//        console.log(listedPlanets);
+   let listedPlanetsResponse = planetsReturned
+   listedPlanetsResponse.then(function (result) {
+       listedPlanets = result;
+       console.log(listedPlanets);
+   }).then(function () {
+      console.log(listedPlanets);
+
+       // Then using pickPlanet() and addDestinationInfo(), 
+       //select a planet at random from listedPlanets and 
        
-       // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
-    
+       
+       //!!!!!!!!pass that information
+       // to addDestinationInfo(). Reload your page 
+       //and check out your site to see the mission target information.
+      pickPlanet(listedPlanets); //????pass this information to addDestination
+
+      addDestinationInfo(planets);
+   });
+           
    let form = document.querySelector("form");
    form.addEventListener("submit", function(event) {
     event.preventDefault();
@@ -24,7 +34,5 @@ window.addEventListener("load", function() {
      let list = document.getElementById("faultyItems");
 
      formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel);
-     //call form submission, get values and pass to form submission
-     //get list elements
    });
 });

@@ -1,19 +1,22 @@
 // Write your helper functions here!
-require('isomorphic-fetch');
+
+// //require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
    // Here is the HTML formatting for our mission target div.
-   /*
-                <h2>Mission Destination</h2>
+   const missionTarget  = document.querySelector('#missionTarget');
+   missionTarget.innerHTML = `
+                <h3>Mission Destination</h3>
                 <ol>
-                    <li>Name: </li>
-                    <li>Diameter: </li>
+                    <li>Name: ${name} </li>
+                    <li>Diameter: ${diameter} </li>
                     <li>Star: ${star}</li>
-                    <li>Distance from Earth: </li>
-                    <li>Number of Moons: </li>
+                    <li>Distance from Earth: ${distance} </li>
+                    <li>Number of Moons: ${moons}</li>
                 </ol>
-                <img src="">
-   */
+                <img src="${imageURL}">
+                `
+   
 }
 
 function validateInput(testInput) { 
@@ -58,18 +61,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 async function myFetch() {
   let planetsReturned;
 
-    planetsReturned = await fetch(https://handlers.education.launchcode.org/static/planets.json).then(function(response) {
-        response.json().then(function(json) {
-            return planetsReturned;
-        })  
-})      
+    planetsReturned = await fetch("https://handlers.education.launchcode.org/static/planets.json").then(function(response) {
+        return response.json()
+});  
+        return planetsReturned;             
 };
 
 function pickPlanet(planets) {
-    //takes in one arguement: a list of planets return one planet from the list with a randomly selected index
-    
-    //Math.random() myFetch.planetsReturned
-}
+    let index = Math.floor(Math.random()*planets.length);
+    return planets[index];
+
+};
 
 module.exports.addDestinationInfo = addDestinationInfo;
 module.exports.validateInput = validateInput;
