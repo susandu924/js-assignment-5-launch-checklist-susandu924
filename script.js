@@ -4,12 +4,13 @@ window.addEventListener("load", function() {
     
    let listedPlanets;
    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-   let listedPlanetsResponse = planetsReturned
+   let listedPlanetsResponse = myFetch();
    listedPlanetsResponse.then(function (result) {
        listedPlanets = result;
        console.log(listedPlanets);
    }).then(function () {
       console.log(listedPlanets);
+      let chosenPlanet = pickPlanet(listedPlanets);
 
        // Then using pickPlanet() and addDestinationInfo(), 
        //select a planet at random from listedPlanets and 
@@ -18,9 +19,10 @@ window.addEventListener("load", function() {
        //!!!!!!!!pass that information
        // to addDestinationInfo(). Reload your page 
        //and check out your site to see the mission target information.
-      pickPlanet(listedPlanets); //????pass this information to addDestination
-
-      addDestinationInfo(planets);
+       //????pass this information to addDestination
+      
+      
+      addDestinationInfo(document, chosenPlanet.name, chosenPlanet.diameter, chosenPlanet.star, chosenPlanet.distance, chosenPlanet.moons, chosenPlanet.image);
    });
            
    let form = document.querySelector("form");
